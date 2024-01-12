@@ -1,7 +1,15 @@
 import { products } from "./data";
 import { ProjectCard } from "@/components";
 
-export const Projects = () => {
+import { getProjects } from "@/sanity/sanity.query";
+
+import { ProjectType } from "@/types";
+
+export const Projects = async () => {
+  const projects: ProjectType[] = await getProjects();
+
+  console.log(projects);
+
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -15,7 +23,7 @@ export const Projects = () => {
 
         <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
           {products.map((product) => (
-            <ProjectCard product={product} key={product.id} />
+            <ProjectCard product={product} key={product.id} project={projects[0]} />
           ))}
         </div>
       </div>

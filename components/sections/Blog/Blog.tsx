@@ -3,11 +3,11 @@ import { BlogCard } from "@/components";
 
 export const Blog = () => {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className="bg-black py-24 sm:py-32 text-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Novedades</h2>
-          <p className="mt-2 text-lg leading-8 text-gray-600">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Novedades</h2>
+          <p className="mt-2 text-lg leading-8 text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum
             facere recusandae voluptatibus
           </p>

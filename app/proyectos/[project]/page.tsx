@@ -1,6 +1,12 @@
+import Image from "next/image";
+import { Metadata } from "next";
+import { getSingleProject } from "@/sanity/sanity.query";
+import type { ProjectType } from "@/types";
+import { PortableText } from "@portabletext/react";
+import fallBackImage from "@/public/project.png";
+
 import Breadcrumb from "@/components/Breadcrumb";
 import { Footer } from "@/components/sections";
-import Image from "next/image";
 
 const features = [
   {
@@ -51,7 +57,35 @@ const features2 = [
   },
 ];
 
-export default function Product() {
+type Props = {
+  params: {
+    project: string;
+  };
+};
+
+// Dynamic metadata for SEO
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  console.log(params);
+  const slug = params.project;
+  const project: ProjectType = await getSingleProject(slug);
+
+  return {
+    title: `${project.name} | Project`,
+    description: project.tagline,
+    openGraph: {
+      images: project.coverImage?.image || "add-a-fallback-project-image-here",
+      title: project.name,
+      description: project.tagline,
+    },
+  };
+}
+
+export default async function Proyecto({ params }: Props) {
+  const slug = params.project;
+  const project: ProjectType = await getSingleProject(slug);
+
+  console.log(project);
+
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">

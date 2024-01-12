@@ -11,11 +11,12 @@ type Props = {
     imageSrc: string;
     imageAlt: string;
   };
+  project: any;
 };
 
-export const ProjectCard: React.FC<Props> = ({ product }) => {
+export const ProjectCard: React.FC<Props> = ({ product, project }) => {
   return (
-    <a key={product.id} href={product.href} className="group">
+    <a key={product.id} href={`proyectos/${project.slug}`} className="group">
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2">
         <Image
           src={product.imageSrc}
