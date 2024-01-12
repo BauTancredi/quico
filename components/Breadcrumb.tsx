@@ -1,37 +1,30 @@
 import { ChevronRightIcon, HomeIcon } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
-const pages = [{ name: "Proyecto 1", href: "#", current: true }];
+type Props = {
+  slug: string;
+};
 
-export default function Breadcrumb() {
+export const Breadcrumb: React.FC<Props> = ({ slug }) => {
+  console.log(slug);
   return (
     <nav className="flex mb-8" aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-4">
         <li>
           <div>
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <Link href="/" className="text-gray-400 hover:text-gray-500">
               <HomeIcon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
               <span className="sr-only">Home</span>
-            </a>
+            </Link>
           </div>
         </li>
-        {pages.map((page) => (
-          <li key={page.name}>
-            <div className="flex items-center">
-              <ChevronRightIcon
-                className="h-5 w-5 flex-shrink-0 text-gray-400"
-                aria-hidden="true"
-              />
-              <a
-                href={page.href}
-                className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
-                aria-current={page.current ? "page" : undefined}
-              >
-                {page.name}
-              </a>
-            </div>
-          </li>
-        ))}
+        <li>
+          <div className="flex items-center">
+            <ChevronRightIcon className="h-5 w-5 flex-shrink-0 text-gray-400" aria-hidden="true" />
+            <a className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700">{slug}</a>
+          </div>
+        </li>
       </ol>
     </nav>
   );
-}
+};

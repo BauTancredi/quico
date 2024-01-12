@@ -7,8 +7,8 @@ export async function getProjects() {
       _id, 
       name,
       "slug": slug.current,
-      tagline,
-      "logo": logo.asset->url,
+      category,
+      coverImage { alt, "image": asset->url },
     }`
   );
 }
@@ -20,9 +20,21 @@ export async function getSingleProject(slug: string) {
       name,
       projectUrl,
       coverImage { alt, "image": asset->url },
-      tagline,
-      description
+      images[] { alt, "image": asset->url },
+      category,
+      description,
+      fullDescription,
     }`,
     { slug }
+  );
+}
+
+export async function getBlogs() {
+  return client.fetch(
+    groq`*[_type == "blog"]{
+      _id, 
+      name,
+      coverImage { alt, "image": asset->url },
+    }`
   );
 }

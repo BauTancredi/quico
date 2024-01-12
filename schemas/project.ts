@@ -14,12 +14,19 @@ const project = {
       type: "string",
       description: "Enter the name of the project",
     },
-    defineField({
-      name: "tagline",
-      title: "Tagline",
+    {
+      name: "category",
+      title: "Category",
       type: "string",
-      validation: (rule) => rule.max(60).required(),
-    }),
+      description: "Enter the category of the project",
+      options: {
+        list: [
+          { title: "Web", value: "web" },
+          { title: "Mobile", value: "mobile" },
+          { title: "Desktop", value: "desktop" },
+        ],
+      },
+    },
     defineField({
       name: "slug",
       title: "Slug",
@@ -28,16 +35,6 @@ const project = {
       options: { source: "name" },
       validation: (rule) => rule.required(),
     }),
-    {
-      name: "logo",
-      title: "Project Logo",
-      type: "image",
-    },
-    {
-      name: "projectUrl",
-      title: "Project URL",
-      type: "url",
-    },
     {
       name: "coverImage",
       title: "Cover Image",
@@ -53,8 +50,33 @@ const project = {
       ],
     },
     {
+      name: "images",
+      title: "Project Images",
+      type: "array",
+      of: [
+        {
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              title: "Alt",
+              type: "string",
+            },
+          ],
+        },
+      ],
+      description: "Upload the images for this project",
+    },
+    {
       name: "description",
       title: "Description",
+      type: "array",
+      description: "Write a description about this project",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "fullDescription",
+      title: "Full Description",
       type: "array",
       description: "Write a full description about this project",
       of: [{ type: "block" }],

@@ -1,36 +1,52 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+import { ProjectType } from "@/types";
 
 type Props = {
-  product: {
-    id: number;
-    name: string;
-    href: string;
-    price: string;
-    description: string;
-    imageSrc: string;
-    imageAlt: string;
-  };
-  project: any;
+  project: ProjectType;
 };
 
-export const ProjectCard: React.FC<Props> = ({ product, project }) => {
+const renderBadge = (category: string) => {
+  switch (category) {
+    case "web":
+      return (
+        <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+          {category}
+        </span>
+      );
+    case "mobile":
+      return (
+        <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
+          {category}
+        </span>
+      );
+    case "desktop":
+      return (
+        <span className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+          {category}
+        </span>
+      );
+  }
+};
+
+export const ProjectCard: React.FC<Props> = ({ project }) => {
   return (
-    <a key={product.id} href={`proyectos/${project.slug}`} className="group">
-      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg sm:aspect-h-3 sm:aspect-w-2">
+    <Link key={project.name} href={`proyectos/${project.slug}`} className="group">
+      <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-1">
         <Image
-          src={product.imageSrc}
-          alt={product.imageAlt}
+          src={project.coverImage?.image}
+          alt={project.coverImage?.alt}
           className="h-full w-full object-cover object-center group-hover:opacity-75"
           width={200}
           height={200}
         />
       </div>
       <div className="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
-        <h3>{product.name}</h3>
-        {/* <p>{product.price}</p> */}
+        <h3>{project.name}</h3>
+        {renderBadge(project.category)}
       </div>
-      {/* <p className="mt-1 text-sm italic text-gray-500">{product.description}</p> */}
-    </a>
+    </Link>
   );
 };
