@@ -204,7 +204,7 @@ export default async function Proyecto({ params }: Props) {
             Simple productivity
           </p>
           <p className="mt-4 text-gray-500">
-            Focus allows you to plan 10 daily tasks, while also thinking ahead about what's next.
+            Focus allows you to plan 10 daily tasks, while also thinking ahead about whats next.
             Forget distracting digital apps and embrace these small, sturdy pieces of paper.
           </p>
         </div>
