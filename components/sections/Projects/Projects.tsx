@@ -17,7 +17,6 @@ export const Projects = async () => {
             <>
               <ProjectCard key={project.name} project={project} />
               <ProjectCard key={project.name} project={project} />
-              <ProjectCard key={project.name} project={project} />
             </>
           ))}
         </div>

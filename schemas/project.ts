@@ -21,7 +21,7 @@ const project = {
       description: "Enter the category of the project",
       options: {
         list: [
-          { title: "Web", value: "web" },
+          { title: "Señaletica", value: "señaletica" },
           { title: "Mobile", value: "mobile" },
           { title: "Desktop", value: "desktop" },
         ],

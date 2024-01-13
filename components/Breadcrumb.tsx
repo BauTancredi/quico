@@ -6,7 +6,6 @@ type Props = {
 };
 
 export const Breadcrumb: React.FC<Props> = ({ slug }) => {
-  console.log(slug);
   return (
     <nav className="flex mb-8" aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-4">
