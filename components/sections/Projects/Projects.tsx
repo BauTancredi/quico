@@ -5,6 +5,8 @@ import { ProjectType } from "@/types";
 export const Projects = async () => {
   const projects: ProjectType[] = await getProjects();
 
+  console.log(projects);
+
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -13,9 +15,9 @@ export const Projects = async () => {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <>
-              <ProjectCard key={project.name} project={project} />
+              <ProjectCard key={index} project={project} />
             </>
           ))}
         </div>

@@ -57,7 +57,7 @@ export default async function Proyecto({ params }: Props) {
               <div className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
                 <Image
                   src={project.images[0].image}
-                  alt={project.images[0].alt!}
+                  alt={""}
                   className="h-full w-full object-cover object-center"
                   width={200}
                   height={200}
@@ -68,7 +68,7 @@ export default async function Proyecto({ params }: Props) {
               <div className="aspect-h-2 aspect-w-3 w-full overflow-hidden rounded-lg">
                 <Image
                   src={project.images[1].image}
-                  alt={project.images[1].alt!}
+                  alt={""}
                   className="h-full w-full object-cover object-center"
                   width={200}
                   height={200}
@@ -104,7 +104,7 @@ export default async function Proyecto({ params }: Props) {
             <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
               <Image
                 src={project.images[2].image}
-                alt={project.images[2].alt!}
+                alt={""}
                 className="h-full w-full object-cover object-center"
                 width={200}
                 height={200}
@@ -114,7 +114,7 @@ export default async function Proyecto({ params }: Props) {
               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={project.images[3].image}
-                  alt={project.images[3].alt!}
+                  alt={""}
                   className="h-full w-full object-cover object-center"
                   width={200}
                   height={200}
@@ -123,7 +123,7 @@ export default async function Proyecto({ params }: Props) {
               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={project.images[4].image}
-                  alt={project.images[4].alt!}
+                  alt={""}
                   className="h-full w-full object-cover object-center"
                   width={200}
                   height={200}
@@ -141,7 +141,7 @@ export default async function Proyecto({ params }: Props) {
               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={image.image}
-                  alt={image.alt!}
+                  alt={""}
                   className="object-cover object-center"
                   width={200}
                   height={200}
