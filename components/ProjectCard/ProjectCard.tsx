@@ -32,7 +32,6 @@ const renderBadge = (category: string) => {
 };
 
 export const ProjectCard: React.FC<Props> = ({ project }) => {
-  console.log(project);
   return (
     <Link key={project.name} href={`proyectos/${project.slug}`} className="group">
       <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-1">

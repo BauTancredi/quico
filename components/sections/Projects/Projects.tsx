@@ -1,3 +1,5 @@
+"use client";
+
 import { getProjects } from "@/sanity/sanity.query";
 import { ProjectCard } from "@/components";
 import { ProjectType } from "@/types";
