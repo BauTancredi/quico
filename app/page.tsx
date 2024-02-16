@@ -1,3 +1,4 @@
+import { About } from "@/components/sections/About";
 import { Footer, Blog, Projects, Hero } from "../components/sections";
 
 // [x] Pasarle a quico dimensión de la imagenes
@@ -18,6 +19,7 @@ export default async function Home() {
     <main>
       <Hero />
       <Projects />
+      <About />
       <Blog />
       <Footer />
     </main>
