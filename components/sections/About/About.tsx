@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <section className="bg-gray-50 ">
+    <section className="bg-gray-50">
       <div className="xl:mx-auto xl:max-w-7xl xl:px-8">
         <Image
           src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"

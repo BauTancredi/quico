@@ -15,9 +15,9 @@ export const Projects = async () => {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:gap-x-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <>
-              <ProjectCard key={index} project={project} />
+              <ProjectCard key={project.slug} project={project} />
             </>
           ))}
         </div>
