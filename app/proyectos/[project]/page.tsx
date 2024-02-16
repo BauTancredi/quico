@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import Image from "next/image";
 import { Metadata } from "next";
@@ -16,24 +16,7 @@ type Props = {
   };
 };
 
-// // Dynamic metadata for SEO
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   console.log(params);
-//   const slug = params.project;
-//   const project: ProjectType = await getSingleProject(slug);
-
-//   return {
-//     title: `${project.name} | Project`,
-//     description: project.tagline,
-//     openGraph: {
-//       images: project.coverImage?.image || "add-a-fallback-project-image-here",
-//       title: project.name,
-//       description: project.tagline,
-//     },
-//   };
-// }
-
-export default async function Proyecto({ params }: Props) {
+export default async function ProyectoPage({ params }: Props) {
   const slug = params.project;
   const project: ProjectType = await getSingleProject(slug);
 
@@ -84,7 +67,7 @@ export default async function Proyecto({ params }: Props) {
         <div className="grid grid-cols-1 items-start gap-x-8 gap-y-16 lg:grid-cols-2">
           <div>
             <div className="border-b border-gray-200 pb-10">
-              <h2 className="font-medium text-gray-500">Señalética</h2>
+              <h2 className="font-medium text-gray-500">{project.category}</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {project.name}
               </p>
@@ -94,7 +77,7 @@ export default async function Proyecto({ params }: Props) {
               {project.description && (
                 <div>
                   <dt className="text-lg font-medium text-gray-900">Descripción</dt>
-                  <dd className="mt-3 text-lg text-gray-500 justify-center max-w-lg">
+                  <dd className="mt-3 text-lg text-gray-500 max-w-lg text-justify">
                     <PortableText value={project.fullDescription} />
                   </dd>
                 </div>
@@ -138,7 +121,7 @@ export default async function Proyecto({ params }: Props) {
 
       <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
         <div className="grid grid-cols-1 items-start gap-x-6 gap-y-16  sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
-          {project.images.slice(4).map((image, index) => (
+          {project.images.slice(5).map((image, index) => (
             <div key={index} className="flex flex-col-reverse">
               <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100">
                 <Image
