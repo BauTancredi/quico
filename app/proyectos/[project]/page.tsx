@@ -22,7 +22,7 @@ export default async function ProyectoPage({ params }: Props) {
 
   return (
     <div className="bg-gray-50">
-      <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 lg:py-24 sm:px-6 py-6 lg:max-w-7xl lg:px-8">
         <Breadcrumb slug={project.name} />
         <section aria-labelledby="details-heading">
           <div className="flex flex-col items-center text-center">
@@ -63,7 +63,7 @@ export default async function ProyectoPage({ params }: Props) {
           </div>
         </section>
       </div>
-      <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 lg:py-24 sm:px-6 py-6 lg:max-w-7xl lg:px-8">
         <div className="grid grid-cols-1 items-start gap-x-8 gap-y-16 lg:grid-cols-2">
           <div>
             <div className="border-b border-gray-200 pb-10">
@@ -119,7 +119,7 @@ export default async function ProyectoPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 lg:py-24 sm:px-6 py-6 lg:max-w-7xl lg:px-8">
         <div className="grid grid-cols-1 items-start gap-x-6 gap-y-16  sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
           {project.images.slice(5).map((image, index) => (
             <div key={index} className="flex flex-col-reverse">

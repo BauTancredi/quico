@@ -16,7 +16,7 @@ export function Hero() {
   ];
 
   return (
-    <ImagesSlider className="h-screen" images={images}>
+    <ImagesSlider className="h-screen" images={images} overlayClassName="bg-transparent">
       <motion.div
         initial={{
           opacity: 0,
@@ -30,11 +30,7 @@ export function Hero() {
           duration: 0.6,
         }}
         className="z-50 flex flex-col justify-center items-center"
-      >
-        <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-          GUILLEM BRANDING
-        </motion.p>
-      </motion.div>
+      ></motion.div>
     </ImagesSlider>
   );
 }

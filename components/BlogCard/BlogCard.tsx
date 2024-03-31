@@ -21,7 +21,7 @@ export const BlogCard: React.FC<Props> = ({ post }) => {
       </div>
       <div className="max-w-xl">
         <div className="group relative">
-          <h3 className="mt-3  leading-6  group-hover:text-gray-600">
+          <h3 className="mt-3  leading-6  group-hover:text-gray-600 ">
             <span className="absolute inset-0" />
             {post.name}
           </h3>
