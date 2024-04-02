@@ -5,6 +5,21 @@ import { BlogType } from "@/types";
 
 export const Blog = async () => {
   const blogs: BlogType[] = await getBlogs();
+
+  const order = [
+    "Terminando HSBC",
+    "Obra y mas Obra!!",
+    "Presentación Libro UP por Gaito",
+    "Publicación Ilustraciones Libro UP",
+    "Recibida",
+    "1er premio tridimensional",
+    "1er premio marcas",
+    "1er premio publicidad",
+    "1er. Premio Afiche",
+  ];
+
+  blogs.sort((a, b) => order.indexOf(a.name) - order.indexOf(b.name));
+
   return (
     <div className="bg-gray-50 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

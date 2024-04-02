@@ -7,6 +7,27 @@ import { ProjectType } from "@/types";
 export const Projects = async () => {
   const projects: ProjectType[] = await getProjects();
 
+  // I need the project order to be like this:
+  // HSBC
+  // Amadea
+  // BMA
+  // OH Buenos Aires
+  // Deliccato
+  // La Pulense
+  // Salesforce
+
+  const order = [
+    "hsbc",
+    "amadea",
+    "libro-bma",
+    "oh-buenos-aires",
+    "delicatto",
+    "la-puelense",
+    "salesforce",
+  ];
+
+  projects.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+
   return (
     <div className="bg-gray-50">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
