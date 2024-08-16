@@ -20,7 +20,7 @@ export function Hero() {
   return (
     <>
       {/* <Video src={quico} autoPlay loop muted className="w-full bg-red-50" /> */}
-      <ImagesSlider className="h-screen hidden " images={images} overlayClassName="bg-transparent">
+      <ImagesSlider className="h-screen" images={images} overlayClassName="bg-transparent">
         <motion.div
           initial={{
             opacity: 0,
