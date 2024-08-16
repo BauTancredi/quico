@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "../../ui/image-slider";
-import Video from "next-video";
-import quico from "../../../videos/quico.webm";
+// import Video from "next-video";
+// import quico from "../../../videos/quico.webm";
 
 export function Hero() {
   const images = [
