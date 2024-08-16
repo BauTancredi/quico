@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev & npx next-video sync -w",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,6 +16,7 @@
     "framer-motion": "^11.0.5",
     "next": "14.0.4",
     "next-sanity": "^7.0.10",
+    "next-video": "^1.1.4",
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.24.1",

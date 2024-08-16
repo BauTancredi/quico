@@ -2,16 +2,8 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "../../ui/image-slider";
-
-export function Video() {
-  return (
-    <div className="flex justify-center items-center md:hidden bg-gray-50 px-4">
-      <video width="320" height="240" preload="none" autoPlay loop muted className="w-full">
-        <source src="header_video.webm" type="video/webm" />
-      </video>
-    </div>
-  );
-}
+import Video from "next-video";
+import quico from "../../../videos/quico.webm";
 
 export function Hero() {
   const images = [
@@ -27,12 +19,8 @@ export function Hero() {
 
   return (
     <>
-      <Video />
-      <ImagesSlider
-        className="h-screen hidden md:block"
-        images={images}
-        overlayClassName="bg-transparent"
-      >
+      {/* <Video src={quico} autoPlay loop muted className="w-full bg-red-50" /> */}
+      <ImagesSlider className="h-screen hidden " images={images} overlayClassName="bg-transparent">
         <motion.div
           initial={{
             opacity: 0,
