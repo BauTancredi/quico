@@ -67,7 +67,9 @@ export default async function ProyectoPage({ params }: Props) {
         <div className="grid grid-cols-1 items-start gap-x-8 gap-y-16 lg:grid-cols-2">
           <div>
             <div className="border-b border-gray-200 pb-10">
-              <h2 className="font-medium text-gray-500">{project.category}</h2>
+              <h2 className="font-medium text-gray-500">
+                {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+              </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {project.name}
               </p>
