@@ -22,8 +22,9 @@ const project = {
       options: {
         list: [
           { title: "Señaletica", value: "señaletica" },
-          { title: "Mobile", value: "mobile" },
-          { title: "Desktop", value: "desktop" },
+          { title: "Editorial", value: "editorial" },
+          { title: "Branding", value: "branding" },
+          { title: "Packaging", value: "packaging" },
         ],
       },
     },
