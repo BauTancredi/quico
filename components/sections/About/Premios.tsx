@@ -34,11 +34,8 @@ const premios = [
 
 export const Premios = () => {
   return (
-    <section className="bg-gray-50 py-24">
+    <section className="bg-gray-50 py-16">
       <div className="xl:mx-auto xl:max-w-7xl px-6 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl  py-8 text-center">
-          Premios y Reconocimientos
-        </h2>
         <div>
           <ul className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
             {premios.map((item) => (

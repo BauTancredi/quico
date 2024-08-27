@@ -38,7 +38,7 @@ export const ProjectCard: React.FC<Props> = ({ project }) => {
         <Image
           src={project.coverImage?.image}
           alt={project.coverImage?.alt}
-          className="h-full w-full object-cover object-center group-hover:opacity-75"
+          className="h-full w-full object-cover object-center"
           width={200}
           height={200}
         />

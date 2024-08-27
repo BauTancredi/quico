@@ -10,7 +10,6 @@ export default async function Home() {
       <Hero />
       <Projects />
       <About />
-      <Premios />
       <Blog />
       <Footer />
     </main>

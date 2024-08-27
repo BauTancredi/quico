@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Premios } from "./Premios";
 
 export const About = () => {
   return (
@@ -33,6 +34,7 @@ export const About = () => {
           </p>
         </div>
       </div>
+      <Premios />
     </section>
   );
 };
